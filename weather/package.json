@@ -1,24 +1,22 @@
 {
   "name": "weather",
   "version": "0.1.0",
-  "author": "JingHuang-Su",
   "private": true,
+  "engines": {
+    "node": "10.15.3",
+    "npm": "6.4.1"
+  },
   "dependencies": {
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-scripts": "3.0.1",
     "uuid": "^3.3.3"
   },
-  "engines": {
-    "node": "10.15.3",
-    "npm": "6.4.1"
-  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix weather && npm run build --prefix weather"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
