@@ -2,7 +2,7 @@
 
 # dependencies
 /node_modules
-/css/fontawesome-free-5.10.1-web
+/src/css/fontawesome-free-5.10.1-web
 /.pnp
 .pnp.js
 
