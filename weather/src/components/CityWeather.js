@@ -11,6 +11,49 @@ import { getCityImage, getForecastWeather } from '../actions';
 import { getCountryName } from '../utils/getCountryName';
 import { timestampToDatetime } from '../utils/timestempToDatetime.js';
 
+class CityWeather extends Component {
+  componentDidMount() {
+    this.props.getCityImage(getCountryName(this.props.city.sys.country));
+    this.props.getForecastWeather(this.props.city.id);
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.city !== prevProps.city) {
+      const fetchData = async () => {
+        await this.props.getCityImage(
+          getCountryName(this.props.city.sys.country)
+        );
+        await this.props.getForecastWeather(this.props.city.id);
+      };
+      fetchData();
+    }
+  }
+
+  render() {
+    return (
+      <Fragment>
+        <main className='city-view'>
+          <CityImage />
+          <CityWeatherDaily
+            sunrise={timestampToDatetime(this.props.city.sys.sunrise)}
+            sunset={timestampToDatetime(this.props.city.sys.sunset)}
+            city={this.props.city}
+          />
+          <div className='detail'>
+            <CityForecast />
+            <CityWindy city={this.props.city} />
+          </div>
+        </main>
+      </Fragment>
+    );
+  }
+}
+
+export default connect(
+  null,
+  { getCityImage, getForecastWeather }
+)(CityWeather);
+
 // const CityWeather = ({ city, getCityImage, getForecastWeather }) => {
 //   const countryName = getCountryName(city.sys.country);
 //   const sunrise = timestampToDatetime(city.sys.sunrise);
@@ -33,10 +76,10 @@ import { timestampToDatetime } from '../utils/timestempToDatetime.js';
 //   ) : (
 //     <div className='content'>
 //       <SideBar />
-//       <main class='city-view'>
+//       <main className='city-view'>
 //         <CityImage />
 //         <CityWeatherDaily sunrise={sunrise} sunset={sunset} city={city} />
-//         <div class='detail'>
+//         <div className='detail'>
 //           <CityForecast />
 //           <CityWindy city={city} />
 //         </div>
@@ -44,49 +87,3 @@ import { timestampToDatetime } from '../utils/timestempToDatetime.js';
 //     </div>
 //   );
 // };
-
-class CityWeather extends Component {
-  componentDidMount() {
-    this.props.getCityImage(getCountryName(this.props.city.sys.country));
-    this.props.getForecastWeather(this.props.city.id);
-  }
-
-  componentDidUpdate(prevProps) {
-    if (this.props.city !== prevProps.city) {
-      const fetchData = async () => {
-        await this.props.getCityImage(
-          getCountryName(this.props.city.sys.country)
-        );
-        await this.props.getForecastWeather(this.props.city.id);
-      };
-      fetchData();
-    }
-  }
-
-  render() {
-    return (
-      <Fragment>
-        <div className='content'>
-          <SideBar />
-          <main class='city-view'>
-            <CityImage />
-            <CityWeatherDaily
-              sunrise={timestampToDatetime(this.props.city.sys.sunrise)}
-              sunset={timestampToDatetime(this.props.city.sys.sunset)}
-              city={this.props.city}
-            />
-            <div class='detail'>
-              <CityForecast />
-              <CityWindy city={this.props.city} />
-            </div>
-          </main>
-        </div>
-      </Fragment>
-    );
-  }
-}
-
-export default connect(
-  null,
-  { getCityImage, getForecastWeather }
-)(CityWeather);

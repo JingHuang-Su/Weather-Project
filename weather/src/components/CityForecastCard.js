@@ -31,50 +31,50 @@ class CityForecastCard extends React.Component {
       <Fragment>
         {items.slice(0, this.state.visible).map(item => {
           return (
-            <div class='description_item'>
-              <div class='daily_top'>
-                <div class='daily_date'>{item.dt_txt}</div>
-                <div class='daily__temp'>
-                  <div class='daily__temp-maxmin'>
-                    <div class='daily__temp-max'>
+            <div className='description_item'>
+              <div className='daily_top'>
+                <div className='daily_date'>{item.dt_txt}</div>
+                <div className='daily__temp'>
+                  <div className='daily__temp-maxmin'>
+                    <div className='daily__temp-max'>
                       Max. {item.main.temp_max}°C
                     </div>
-                    <div class='daily__temp-avg'>Avg. {item.main.temp}°C</div>
-                    <div class='daily__temp-min'>
+                    <div className='daily__temp-avg'>Avg. {item.main.temp}°C</div>
+                    <div className='daily__temp-min'>
                       Min. {item.main.temp_min}°C
                     </div>
                   </div>
                 </div>
               </div>
-              <div class='daily_down'>
-                <div class='daily_down-even'>
+              <div className='daily_down'>
+                <div className='daily_down-even'>
                   <i
-                    class={`${weatherCondition[item.weather[0].main]} fa-1x`}
+                    className={`${weatherCondition[item.weather[0].main]} fa-1x`}
                   />
-                  <div class='daily__weather-description'>
+                  <div className='daily__weather-description'>
                     <span>{item.weather[0].description}</span>
                     <span>Cloudiness: {item.clouds.all}</span>
                   </div>
                 </div>
-                <div class='daily_down-even'>
-                  <div class='daily__wind-text'>Wind</div>
-                  <div class='daily__wind-speed'>
+                <div className='daily_down-even'>
+                  <div className='daily__wind-text'>Wind</div>
+                  <div className='daily__wind-speed'>
                     Speed: <span>{item.wind.speed}</span> m/s
                   </div>
-                  <div class='daily__wind-deg'>
+                  <div className='daily__wind-deg'>
                     Degree: <span>{item.wind.deg}</span>°
                   </div>
                 </div>
-                <div class='daily_down-even'>
-                  <div class='daily__other-humidity'>
+                <div className='daily_down-even'>
+                  <div className='daily__other-humidity'>
                     Humidity: <span>{item.main.humidity}</span>%
                   </div>
-                  {/* <div class='daily__other-sunrise'>
-              <i class='fas fa-snowman fa-1x' title='snow volume' />
+                  {/* <div className='daily__other-sunrise'>
+              <i className='fas fa-snowman fa-1x' title='snow volume' />
               <span>{item.snow}</span>mm
             </div>
-            <div class='daily__other-sunset'>
-              <i class='fas fa-tint fa-1x' title='rain volume' />
+            <div className='daily__other-sunset'>
+              <i className='fas fa-tint fa-1x' title='rain volume' />
               <span>{item.rain}</span>mm
             </div> */}
                 </div>

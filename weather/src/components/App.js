@@ -5,14 +5,18 @@ import SearchBar from './SearchBar';
 import Alert from './Alert';
 
 import '../css/style.css';
+import SideBar from './SideBar';
 
 export class App extends Component {
   render() {
     return (
-      <div class='container'>
+      <div className='container'>
         <Alert />
         <SearchBar />
-        <CityWeatherHigh />
+        <div className='content'>
+          <SideBar />
+          <CityWeatherHigh />
+        </div>
       </div>
     );
   }

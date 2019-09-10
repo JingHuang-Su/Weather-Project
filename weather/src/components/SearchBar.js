@@ -24,29 +24,27 @@ export class SearchBar extends Component {
   render() {
     return (
       <header className='header'>
-        <img src={require('../img/logo.png')} alt='W logo' class='logo' />
+        <img src={require('../img/logo.png')} alt='W logo' className='logo' />
         <form onSubmit={this.onFormSubmit} className='search'>
-          <label class='search__label'>Search World Weather </label>
+          <label className='search__label'>Search World Weather </label>
           <br />
           <input
             type='text'
-            placeholder='Taipei, TW'
+            placeholder='Ex. Taipei, TW'
             value={this.state.term}
             onChange={this.onFormChange}
             className='search__input'
           />
-          <button class='search__button'>
-            <i class='fas fa-search-location' />
+          <button className='search__button'>
+            <i className='fas fa-search-location' />
           </button>
         </form>
         <nav className='user-nav'>
           <div className='user-nav__user'>
-            {/* <img
-              src={require('../img/user.png')}
-              alt='img'
-              className='user-nav__user-photo'
-            /> */}
-            <a href='http://localhost:3000' className='user-nav__user-name'>
+            <a
+              href='https://github.com/JingHuang-Su/Weather-Project'
+              className='user-nav__user-name'
+            >
               Version 1.0
             </a>
             <p> &copy; JingHuang-Su</p>

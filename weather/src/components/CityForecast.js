@@ -9,7 +9,7 @@ class CityForecast extends Component {
     return !this.props.forecast.forecastWeather ? (
       <Spinner />
     ) : (
-      <div class='description'>
+      <div className='description'>
         <CityForecastCard
           visible={4}
           items={this.props.forecast.forecastWeather.list}
