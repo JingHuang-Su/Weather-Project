@@ -2,7 +2,7 @@
 
 ## **[Click it live here](https://weatherlooker.herokuapp.com 'Click it live here')**
 
-## Features of this project (Quick overview)
+## Features of this project (Quick Overview)
 
 - The purpose of building this project provides a good looking weather forecast website for the user who wants to search the weather of a specific city in the world.
 - Use **localStorage** to store cities that the user has been added to the favorite list.
