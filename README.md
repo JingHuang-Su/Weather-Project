@@ -40,6 +40,12 @@ Layout:
 
 ---
 
+### Inspired By
+
+The course called "Advanced CSS and Sass: Flexbox, Grid, Animations and More!" provided by Jonas Schmedtmann who is an instructor from the Udemy.
+
+---
+
 ### Author
 
 JingHuang-Su, &copy; All rights reserved.
