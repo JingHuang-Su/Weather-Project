@@ -4,9 +4,9 @@
 
 ## Features of this project (Quick Overview)
 
-- The purpose of building this project provides a good looking weather forecast website for the user who wants to search the weather of a specific city in the world.
+- The purpose of building this project is providing a good looking weather forecast website for the user who wants to search the weather of a specific city in the world.
 - Use **localStorage** to store cities that the user has been added to the favorite list.
-- Other features like the Search bar, get data from an API...
+- Other features such as search bar, get data from an API...
 
 ##### Notes
 
@@ -42,7 +42,7 @@ Layout:
 
 ### Inspired By
 
-The course called "Advanced CSS and Sass: Flexbox, Grid, Animations and More!" provided by Jonas Schmedtmann who is an instructor from the Udemy.
+The course called "Advanced CSS and Sass: Flexbox, Grid, Animations and More!" made by Jonas Schmedtmann who is a Udemy instructor.
 
 ---
 
