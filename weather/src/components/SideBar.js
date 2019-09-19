@@ -5,7 +5,7 @@ import SideBarItem from './SideBarItem';
 
 class SideBar extends Component {
   render() {
-    return JSON.parse(window.localStorage.getItem('favoriate')) === null ? (
+    return this.props.state === null ? (
       <nav className='sidebar'>
         <ul className='side-nav' />
         <div className='legal'>
@@ -15,8 +15,8 @@ class SideBar extends Component {
     ) : (
       <nav className='sidebar'>
         <div className='side-nav'>
-          {JSON.parse(window.localStorage.getItem('favoriate')).map(i => (
-            <SideBarItem item={i} />
+          {this.props.favoriate.map(i => (
+            <SideBarItem key={i} item={i} />
           ))}
         </div>
         <div className='legal'>

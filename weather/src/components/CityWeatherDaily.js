@@ -1,28 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { addFav, removeFav } from '../actions';
 import { weatherCondition } from '../utils/weatherCondition';
 
 const CityWeatherDaily = ({ city, sunrise, sunset, addFav, removeFav }) => {
-  let [isClicked] = useState(false);
   const onClickFav = () => {
-    if (JSON.parse(window.localStorage.getItem('favoriate')) === null) {
-      isClicked = false;
-    } else {
-      isClicked = JSON.parse(
-        window.localStorage
-          .getItem('favoriate')
-          .includes(`${city.name}, ${city.sys.country}`)
-      );
-    }
-
-    if (isClicked === false) {
-      isClicked = true;
-      return addFav(`${city.name}, ${city.sys.country}`);
-    } else {
-      isClicked = false;
-      return removeFav(`${city.name}, ${city.sys.country}`);
-    }
+    return addFav(`${city.name}, ${city.sys.country}`);
   };
   const icon = `${weatherCondition[city.weather[0].main]} fa-1x`;
 

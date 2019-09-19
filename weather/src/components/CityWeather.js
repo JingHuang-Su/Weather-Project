@@ -1,7 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 
-import SideBar from './SideBar';
 import CityImage from './CityImage';
 import CityForecast from './CityForecast';
 import CityWindy from './CityWindy';

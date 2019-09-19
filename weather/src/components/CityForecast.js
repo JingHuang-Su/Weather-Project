@@ -11,6 +11,7 @@ class CityForecast extends Component {
     ) : (
       <div className='description'>
         <CityForecastCard
+          key={this.props.forecast.forecastWeather.list}
           visible={4}
           items={this.props.forecast.forecastWeather.list}
         />

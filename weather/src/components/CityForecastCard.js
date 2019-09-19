@@ -39,7 +39,9 @@ class CityForecastCard extends React.Component {
                     <div className='daily__temp-max'>
                       Max. {item.main.temp_max}°C
                     </div>
-                    <div className='daily__temp-avg'>Avg. {item.main.temp}°C</div>
+                    <div className='daily__temp-avg'>
+                      Avg. {item.main.temp}°C
+                    </div>
                     <div className='daily__temp-min'>
                       Min. {item.main.temp_min}°C
                     </div>
@@ -49,7 +51,9 @@ class CityForecastCard extends React.Component {
               <div className='daily_down'>
                 <div className='daily_down-even'>
                   <i
-                    className={`${weatherCondition[item.weather[0].main]} fa-1x`}
+                    className={`${
+                      weatherCondition[item.weather[0].main]
+                    } fa-1x`}
                   />
                   <div className='daily__weather-description'>
                     <span>{item.weather[0].description}</span>
@@ -69,14 +73,6 @@ class CityForecastCard extends React.Component {
                   <div className='daily__other-humidity'>
                     Humidity: <span>{item.main.humidity}</span>%
                   </div>
-                  {/* <div className='daily__other-sunrise'>
-              <i className='fas fa-snowman fa-1x' title='snow volume' />
-              <span>{item.snow}</span>mm
-            </div>
-            <div className='daily__other-sunset'>
-              <i className='fas fa-tint fa-1x' title='rain volume' />
-              <span>{item.rain}</span>mm
-            </div> */}
                 </div>
               </div>
             </div>

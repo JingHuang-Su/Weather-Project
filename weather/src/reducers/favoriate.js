@@ -1,25 +1,28 @@
 import * as GET from '../actions/types';
 
-export default (state = [], action) => {
+let initialState = JSON.parse(window.localStorage.getItem('favoriate'));
+console.log(initialState);
+
+export default (state = initialState, action) => {
   const { type, payload } = action;
   switch (type) {
     case GET.ADD_FAV:
-      const store = JSON.parse(window.localStorage.getItem('favoriate'));
-      if (store) {
+      if (state.includes(payload)) {
+        window.localStorage.setItem('favoriate', JSON.stringify([...state]));
+        return state;
+      } else {
         window.localStorage.setItem(
           'favoriate',
-          JSON.stringify([...store, payload])
+          JSON.stringify([...state, payload])
         );
-      } else {
-        window.localStorage.setItem('favoriate', JSON.stringify([payload]));
+        return [...state, payload];
       }
-      return [...state, payload];
+
     case GET.REMOVE_FAV:
-      const local = JSON.parse(window.localStorage.getItem('favoriate'));
-      const newlocal = local.filter(i => i !== payload);
-      if (local) {
-        window.localStorage.setItem('favoriate', JSON.stringify(newlocal));
-      }
+      window.localStorage.setItem(
+        'favoriate',
+        JSON.stringify(state.filter(i => i !== payload))
+      );
       return state.filter(i => i !== payload);
     default:
       return state;
