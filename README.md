@@ -18,7 +18,7 @@
 Layout:
 ![](https://i.imgur.com/sRMNLoB.png)
 
-> the layout for this project
+> the layout of this project
 
 ---
 
