@@ -9,7 +9,7 @@ class CityForecastCard extends React.Component {
     // this.loadMore = this.loadMore.bind(this)
   }
 
-  componentDidUpdate(prevProps) {
+  componentDidUpdate(prevProps, prevState) {
     if (this.props.items !== prevProps.items) {
       this.setState({ visible: 4 });
     }

@@ -5,7 +5,7 @@ import SideBarItem from './SideBarItem';
 
 class SideBar extends Component {
   render() {
-    return this.props.state === null ? (
+    return this.props.favoriate === null ? (
       <nav className='sidebar'>
         <ul className='side-nav' />
         <div className='legal'>
